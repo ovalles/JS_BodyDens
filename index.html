@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+
+    <!--JQUERY!!!! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--BOOTSTRAP MAIN STYLES -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!--FONTAWESOME MAIN STYLE -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!--SLIDER CSS CLASES -->
+    <link href="assets/Slides-SlidesJS-3/examples/playing/css/slider.css" rel="stylesheet" />
+    <!--CUSTOM STYLE -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+   </head>
+
+  <body style="background-color:lightgray;">
+
+   <!-- SLIDER SECTION --->
+    <div id="slides">
+        <img src="assets/img/slider/images/1.jpg" alt="" />
+        <img src="assets/img/slider/images/2.jpg" alt="" />
+        <img src="assets/img/slider/images/1.jpg" alt="" />
+        <img src="assets/img/slider/images/2.jpg" alt="" />
+
+    </div>
+    <!-- END SLIDER SECTION -->
+
+
+    <h1 style="text-align:center;">
+      Estimaci&oacuten del porcentaje de grasa corporal
+    </h1>
+
+    <p style="text-align:center;">
+      Por AJ Ovalles, 2016
+    </p>
+
+    <container>
+      <form>
+	<h3 style="text-align:center;"> Datos del Paciente </h3>
+	
+	<div class="row">
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Nombre:<br>
+	    <input type="text" class="form-control" name="name" placeholder="Nombre">
+	  </div>
+
+
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Apellido:<br>
+	    <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+	  </div>
+	  
+
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Sexo:<br>
+	    <select id="SelSexo" class="medcls">
+	      <option value="Mujer">Mujer</option>
+	      <option value="Hombre">Hombre</option>
+	    </select>
+	  </div>
+	</div>
+
+
+	<div class="row">
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Edad:<br>
+	    <input type="number" class="form-control" name="age" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	  </div>
+	  
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Peso (kg):<br>
+	    <input type="text" class="form-control" name="weight" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	  </div>
+	  
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Estatura (m):<br>
+	    <input type="text" class="form-control" name="estatura" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-sm-6" style="background-color:lavenderblush;">
+	    M&eacutedico:<br>
+	    <input type="text" class="form-control" name="medico" placeholder="Dra. Maria Ovalles">
+	  </div>
+
+	  <div class="col-sm-6" style="background-color:lavenderblush;">
+	    E-mail:<br>
+	    <input type="text" class="form-control" name="email" placeholder="paciente@mail.com" >
+	  </div>
+
+	</div>
+
+
+	<br><br>
+	<h3 style="text-align:center;">Medidas</h3>
+	<div class="row">
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Bicep (mm) <p id="bicep_par" ></p>	  
+	    <input type="text" size="8" name="bicep" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="bicep" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="bicep" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>	    
+	  </div>
+
+	  <div class="col-sm-4" style="background-color:lavenderblush;">	
+	    Tricep (mm) <p id="tricep_par" ></p>
+	    <input type="text" size="8" name="tricep" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="tricep" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="tricep" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>
+	  </div>
+
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    
+	    Subescapular (mm) <p id="subescapular_par" ></p>
+	    <input type="text" size="8" name="subescapular" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="subescapular" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="subescapular" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>
+	  </div>
+	</div><br>
+
+	<div class="row">
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Supraliaco (mm) <p id="supraliaco_par" ></p>
+	    <input type="text" size="8" name="supraliaco" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="supraliaco" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="supraliaco" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>
+
+	  </div>
+
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Muslo (mm) <p id="muslo_par" ></p>
+	    <input type="text" size="8" name="muslo" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="muslo" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="muslo" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>
+	  </div>
+
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Pectoral (mm) <p id="pectoral_par" ></p>
+	    <input type="text" size="8" name="pectoral" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44' >
+	    <input type="text" size="8" name="pectoral" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="pectoral" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>
+	  </div>
+	</div><br>
+	
+	<div class="row">
+	  <div class="col-sm-4" style="background-color:lavenderblush;">
+	    Abdominal (mm) <p id="abdominal_par" > </p>
+	    <input type="text" size="8" name="abdominal" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44' >
+	    <input type="text" size="8" name="abdominal" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'>
+	    <input type="text" size="8" name="abdominal" class="medcls" placeholder="0.0" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>
+	  </div>
+	</div><br>
+	
+	<div class="form-group">
+	  <input type='button' class="btn btn-primary" name='BtnCalcular' value='Calcular' onClick="Calcular()" /><br><br><br> 
+	</div>
+
+
+	<div class="container">
+	  <h4 id="LblJacksonPollock"></h4> <br>
+	  <h4 id="LblDurnin"></h4> <br><br>
+
+	  <h4>Porcentaje de grasa deseado (%): </h4>
+	  <input type="text" class="form-control" name="PorcGrasaDes" placeholder="12"><br>
+	  <h4>Masa magra deseada (kg): </h4>
+	  <input type="text" class="form-control" name="MasaMagraDes" placeholder="12"><br>
+
+	  <select id="DCModel">
+	    <option value="JacksonMod">Modelo de Jackson & Pollock</option>
+	    <option value="DurninMod">Modelo de Durnin & Womersle</option>
+	  </select>
+
+	  <input type='button' class="btn btn-primary" name='BtnModelar' value='Modelar' onClick="Modelar()" /><br><br><br>
+
+	  <h3>Resultados: </h3><br>
+
+	  <h2 id="LblPorcGrasa"></h2><br>
+	  <h2 id="LblMasaMagra"></h2><br>
+	  <h2 id="LblPesoIdealFromMasaMagra"></h2><br>
+	  <h2 id="LblPesoIdeal_PorcGrasaAct"></h2><br>
+	  <h2 id="LblIMC"></h2><br>
+
+
+	  
+
+	</div>
+
+
+	
+
+      </form>
+    </container>
+    
+    <script src="./backend.js"></script>
+
+
+  </body>
+
+
+</html>
