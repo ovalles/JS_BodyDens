@@ -32,7 +32,7 @@
 
 
     <h1 style="text-align:center;">
-      Estimaci&oacuten del porcentaje de grasa corporal
+      Composici&oacuten Corporal
     </h1>
 
     <p style="text-align:center;">
@@ -166,11 +166,11 @@
 	  <h4 id="LblDurnin"></h4> <br><br>
 
 	  <h4>Porcentaje de grasa deseado (%): </h4>
-	  <input type="text" class="form-control" name="PorcGrasaDes" placeholder="12"><br>
+	  <input type="text" class="modcls" name="PorcGrasaDes" placeholder="12" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br>
 	  <h4>Masa magra deseada (kg): </h4>
-	  <input type="text" class="form-control" name="MasaMagraDes" placeholder="12"><br>
+	  <input type="text" class="modcls" name="MasaMagraDes" placeholder="12" onkeypress='return event.charCode >= 0 && event.charCode <= 57 && event.charCode != 44'><br><br>
 
-	  <select id="DCModel">
+	  <select id="DCModel" class="modcls">
 	    <option value="JacksonMod">Modelo de Jackson & Pollock</option>
 	    <option value="DurninMod">Modelo de Durnin & Womersle</option>
 	  </select>
@@ -179,11 +179,12 @@
 
 	  <h3>Resultados: </h3><br>
 
-	  <h2 id="LblPorcGrasa"></h2><br>
-	  <h2 id="LblMasaMagra"></h2><br>
-	  <h2 id="LblPesoIdealFromMasaMagra"></h2><br>
-	  <h2 id="LblPesoIdeal_PorcGrasaAct"></h2><br>
-	  <h2 id="LblIMC"></h2><br>
+	  <h4 id="LblPorcGrasa"></h4><br>
+	  <h4 id="LblMasaMagra"></h4><br>
+	  <h4 id="LblKgGrasa"></h4><br>
+	  <h4 id="LblPesoIdealFromMasaMagra"></h4><br>
+	  <h4 id="LblPesoIdeal_PorcGrasaAct"></h4><br>
+	  <h4 id="LblIMC"></h4><br>
 
 
 	  

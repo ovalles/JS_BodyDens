@@ -9,6 +9,12 @@ $(document).ready(function(){
     $(".form-control").on("change keyup paste", function(){
 	Calcular();
     });
+
+    //The same but when class=modcls changes
+    $(".modcls").on("change keyup paste click", function(){
+	Modelar();
+    });
+
 });
 
 
@@ -187,15 +193,17 @@ function Modelar() {
 
     var PorcGrasa = (4.95 / DCindex -4.5) * 100;
     var MasaMagra = weightVal - ((PorcGrasa/100) * weightVal);
-    var PesoIdeal_MasaMagraAct = MasaMagra / (100 - PorcGrasaDesVal);
-    var PesoIdeal_PorcGrasaAct = MasaMagraDesVal / (100 - PorcGrasa);
+    var MasaGrasa = weightVal - MasaMagra;
+    var PesoIdeal_MasaMagraAct = MasaMagra / (1 - (PorcGrasaDesVal/100));
+    var PesoIdeal_PorcGrasaAct = MasaMagraDesVal / (1 - (PorcGrasa/100));
     var IMC = weightVal / Math.pow(estaturaVal,2);
 
-    document.getElementById("LblPorcGrasa").innerHTML = "% de Grasa: " + PorcGrasa ;
-    document.getElementById("LblMasaMagra").innerHTML = "Masa Magra: " + MasaMagra ;
-    document.getElementById("LblPesoIdealFromMasaMagra").innerHTML = "Peso Ideal a partir de masa magra actual: " + PesoIdeal_MasaMagraAct ;
-    document.getElementById("LblPesoIdeal_PorcGrasaAct").innerHTML = "Peso Ideal a partir del Porcentaje de grasa Actual: " +PesoIdeal_PorcGrasaAct ;
-    document.getElementById("LblIMC").innerHTML = "Indice de masa corporal: " + IMC ;
+    document.getElementById("LblPorcGrasa").innerHTML = "% de Grasa: " + parseFloat(PorcGrasa).toFixed(3) + " %" ;
+    document.getElementById("LblMasaMagra").innerHTML = "Masa Magra: " + parseFloat(MasaMagra).toFixed(1) + " kg";
+    document.getElementById("LblKgGrasa").innerHTML = "Kilogramos de Grasa: " + parseFloat(MasaGrasa).toFixed(1) + " kg";
+    document.getElementById("LblPesoIdealFromMasaMagra").innerHTML = "Peso ideal a partir de masa magra actual: " + parseFloat(PesoIdeal_MasaMagraAct).toFixed(1) + " kg";
+    document.getElementById("LblPesoIdeal_PorcGrasaAct").innerHTML = "Peso ideal a partir del porcentaje de grasa actual: " + parseFloat(PesoIdeal_PorcGrasaAct).toFixed(1) + " kg";
+    document.getElementById("LblIMC").innerHTML = "Indice de masa corporal: " + parseFloat(IMC).toFixed(3);
 
     
 };
